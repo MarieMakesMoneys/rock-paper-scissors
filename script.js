@@ -1,38 +1,60 @@
-let options = ["r", "p", "s"]
+let options = ["rock", "paper", "scissors"]
 
 function getComputerChoice() {
     return options[Math.floor(Math.random() * 3)];
 }
 
-const playerSelection = "R".toLowerCase()
-const computerSelection = getComputerChoice()
+const playerSelection = "paPEr".toLowerCase();
+const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
-        case "r":
+        case "rock":
             switch (computerSelection) {
-                case "r":
-                    return "It's a tie!";
+                case "rock":
+                    return "Rock versus Rock... It's a tie!";
                     break;
-                case "p":
+                case "paper":
                     return "You lose! Paper beats Rock!";
                     break;
-                case "s":
+                case "scissors":
                     return "You win! Rock beats Scissors!";
                     break;   
             }
             break;
-        case "p":
+        case "paper":
             switch (computerSelection) {
-                case "r":
-                    return "It's a tie!";
+                case "rock":
+                    return "You win! Paper beats Rock!";
                     break;
-                case "p":
-                    return "You lose! Paper beats Rock!";
+                case "paper":
+                    return "Paper versus Paper... It's a tie!";
                     break;
-                case "s":
-                    return "You win! Rock beats Scissors!";
+                case "scissors":
+                    return "You lose! Scissors beat Paper!";
                     break;   
             }
             break;
+        case "scissors":
+            switch (computerSelection) {
+                case "rock":
+                    return "You lose! Rock beats Scissors!";
+                    break;
+                case "paper":
+                    return "You win! Scissors beat Paper!";
+                    break;
+                case "scissors":
+                    return "Scissors versus Scissors... It's a tie!";
+                    break;   
+            }
+            break;
+        default:
+            return "There seems to be a problem. Please try again."
     }
+}
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound(playerSelection, computerSelection)
+    }
+}
