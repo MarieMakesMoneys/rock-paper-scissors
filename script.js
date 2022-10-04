@@ -3,12 +3,11 @@ let options = ["rock", "paper", "scissors"]
 function getComputerChoice() {
     return options[Math.floor(Math.random() * 3)];
 }
-
-const playerSelection = "paPEr".toLowerCase();
-const computerSelection = getComputerChoice();
+// const playerSelection = "paPEr".toLowerCase();
+// const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
-    switch (playerSelection) {
+    switch (playerSelection.toLowerCase()) {
         case "rock":
             switch (computerSelection) {
                 case "rock":
@@ -53,8 +52,12 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playRound(playerSelection, computerSelection)
+let roundNum = Number(prompt("How many rounds do you want to play?", ""));
+
+function game(roundNum) {
+    for (let i = 0; i < roundNum; i++) {
+        let playerSelection = prompt("Your move : rock, paper, or scissors ?", "");
+        let computerSelection = getComputerChoice();
+        return playRound(playerSelection, computerSelection);
     }
 }
