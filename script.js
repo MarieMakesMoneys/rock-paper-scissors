@@ -55,9 +55,30 @@ function playRound(playerSelection, computerSelection) {
 let roundNum = Number(prompt("How many rounds do you want to play?", ""));
 
 function game(roundNum) {
+    let playerWin = 0;
+    let computerWin = 0;
+
     for (let i = 0; i < roundNum; i++) {
         let playerSelection = prompt("Your move : rock, paper, or scissors ?", "");
         let computerSelection = getComputerChoice();
-        return playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        
+        if (playerSelection === "rock" && computerSelection === "scissors" ||
+        playerSelection === "paper" && computerSelection === "rock" ||
+        playerSelection === "scissors" && computerSelection === "paper" ) {
+            playerWin = playerWin + 1
+        } else if (playerSelection === "rock" && computerSelection === "paper" ||
+        playerSelection === "paper" && computerSelection === "scissors" ||
+        playerSelection === "scissors" && computerSelection === "rock") {
+            computerWin = computerWin + 1
+        }
+    }
+    
+    if (playerWin > computerWin) {
+        console.log("You won! What a game!")
+    } else if (playerWin < computerWin) {
+        console.log("The machine has won, we are doomed.")
+    } else {
+        console.log("It's a full tie, play another game ?")
     }
 }
