@@ -1,10 +1,10 @@
-let options = ["rock", "paper", "scissors"]
+let options = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
     return options[Math.floor(Math.random() * 3)];
-}
-// const playerSelection = "paPEr".toLowerCase();
-// const computerSelection = getComputerChoice();
+};
+
+let computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection.toLowerCase()) {
@@ -50,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
         default:
             return "There seems to be a problem. Please try again."
     }
-}
+};
 
 let roundNum = Number(prompt("How many rounds do you want to play?", ""));
 
@@ -81,4 +81,15 @@ function game(roundNum) {
     } else {
         console.log("It's a full tie, play another game ?")
     }
-}
+};
+
+const buttons = document.querySelectorAll('button');
+
+const buttonRock = document.querySelector('button.R');
+const buttonPaper = document.querySelector('button.P');
+const buttonScissors = document.querySelector('button.S');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', playRound);
+});
+
