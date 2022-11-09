@@ -70,11 +70,14 @@ body {
 }
 
 .outcome {
+    text-align: center;
     grid-column: span 2;
     box-shadow: 2px 2px 10px #c2a83e;
-    height: ;
+    height: 4rem;
     margin-bottom: 2rem;
-    padding: 1rem;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-style: italic;
 }
 
 .play-again {
