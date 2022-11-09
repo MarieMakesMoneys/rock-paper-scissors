@@ -15,7 +15,7 @@
 body {
     padding: 3rem;
     display: grid;
-    grid-template-rows: 120px 1fr 120px;
+    grid-template-rows: 120px 1fr 120px 30px;
 }
 
 .container {
@@ -105,4 +105,15 @@ body {
     border: solid 2px #7ca982;
     box-shadow: 2px 2px 10px #7ca982;
     cursor: pointer;
+}
+
+footer {
+    background-color: #c2a83e;
+    border-radius: 1rem;
+    padding: .3rem;
+    text-align: center;
+}
+
+footer :link, footer :visited {
+    color: #f1f7ed;
 }
